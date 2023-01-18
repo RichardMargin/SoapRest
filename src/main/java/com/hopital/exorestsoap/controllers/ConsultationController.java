@@ -35,15 +35,6 @@ public class ConsultationController {
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }
 
-    @PostMapping("/new")
-    public ResponseEntity<Consultation> save(@RequestBody Consultation consultation) {
-        Consultation consul = consultationService.save(consultation);
-        if (consul != null) {
-            return new ResponseEntity<>(consul, HttpStatus.CREATED);
-        }
-        return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-
     @PutMapping("/edit")
     public ResponseEntity<Consultation> update(@RequestBody Consultation consultation) {
         Consultation consul = consultationService.save(consultation);
