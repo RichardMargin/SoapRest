@@ -14,10 +14,19 @@
 
 5. Lorsqu'un rendez-vous est créé, une consultation associée est automatiquement créée.
 
-6. Nous avons mis en place des tests unitaires pour assurer la résilliance de notre application.
+6. Lorsqu'un rendez-vous est supprimé, la consultation associée est également supprimée pour garder une cohérence de donnée.
 
-7. Dans le dossier conceotuib, vous trouvez les 3 diagrammes qui composent notre dossier d'architecture.
+7. Nous avons mis en place des tests unitaires pour assurer la résilliance de notre application.
 
-8. Les services sont testables sur PostMan (localhost:9090)
+8. Dans le dossier conceotuib, vous trouvez les 3 diagrammes qui composent notre dossier d'architecture.
 
-Sarah, Walid, Mohamed, Richard.
+9. Les services sont testables sur PostMan (localhost:9090)
+
+10. Nous avons inclus dans le dossier "collection_postman" une collection postman incluant l'enssemble des requêtes http sur les endpoints de notre application.
+
+11. Membres du groupe:
+
+- Sarah ROUINI.
+- Walid REHIOUI.
+- Mohamed DESOKI.
+- Richard MANGIN.
