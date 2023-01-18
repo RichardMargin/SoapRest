@@ -102,4 +102,73 @@ public void deleteRdvs() throws Exception{
 
 //Then
     assertThat(response.getBody()).isNull();}
+
+    @Test
+    // Test de la méthode  erreur 500 save
+    public void saveErreur500() throws Exception{
+
+    //Given
+        Rdv rdvMock = new Rdv();
+        Patient patientMock = new Patient();
+        patientMock.setId(1L);
+        Medecin medecinMock = new Medecin();
+        medecinMock.setId(1L);
+        rdvMock.setId(1L);
+        rdvMock.setPatient(patientMock);
+        rdvMock.setMedecin(medecinMock);
+
+    //When
+        Mockito.when(rdvService.save(rdvMock,1L,1L)).thenReturn(null);
+        ResponseEntity<Rdv> response = rdvController.save(rdvMock,1L,1L);
+
+    //Then
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR,response.getStatusCode());
+        assertThat(response.getBody()).isNull();
+    }
+
+    @Test
+    // Test de la méthode erreur 500 delete
+    public void deleteErreur500() throws Exception{
+
+    //Given
+        Rdv rdvMock = new Rdv();
+        Patient patientMock = new Patient();
+        patientMock.setId(1L);
+        Medecin medecinMock = new Medecin();
+        medecinMock.setId(1L);
+        rdvMock.setId(1L);
+        List<Rdv> rdvList = new ArrayList<>();
+        rdvList.add(rdvMock);
+
+    //When
+        Mockito.when(rdvService.findAll()).thenReturn(rdvList);
+        ResponseEntity<Rdv> response = rdvController.deleteAll();
+
+    //Then
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR,response.getStatusCode());
+        assertThat(response.getBody()).isNull();
+    }
+    @Test
+    // Test de la méthode erreur 500 deleteById
+    public void deleteByIdErreur500() throws Exception{
+
+    //Given
+        Rdv rdvMock = new Rdv();
+        Patient patientMock = new Patient();
+        patientMock.setId(1L);
+        Medecin medecinMock = new Medecin();
+        medecinMock.setId(1L);
+        rdvMock.setId(1L);
+    //When
+        Mockito.when(rdvService.findById(1L)).thenReturn(Optional.of(rdvMock));
+        ResponseEntity<Rdv> response = rdvController.deleteById(1L);
+
+    //Then
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR,response.getStatusCode());
+        assertThat(response.getBody()).isNull();
+    }
+
+
 }
+
+

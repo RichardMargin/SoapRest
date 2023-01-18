@@ -72,7 +72,6 @@ public class ConsultationControllerTest {
 
 
     @Test
-
     public void createConsultationTest() throws Exception {
         //Given
         Consultation consultation = new Consultation();
@@ -82,4 +81,18 @@ public class ConsultationControllerTest {
         //Then
         assertEquals(1L, coonsultationService.save(consultation).getId());
     }
+
+    @Test
+    public void updateConsultationTest() throws Exception {
+        //Given
+        Consultation consultation = new Consultation();
+        consultation.setId(1L);
+        //When
+        Mockito.when(coonsultationService.save(consultation)).thenReturn(consultation);
+        //Then
+        assertEquals(1L, coonsultationService.save(consultation).getId());
+    }
+
+
+
 }
