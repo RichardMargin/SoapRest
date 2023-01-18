@@ -18,7 +18,7 @@
 
 7. Nous avons mis en place des tests unitaires pour assurer la résilliance de notre application.
 
-8. Dans le dossier conceotuib, vous trouvez les 3 diagrammes qui composent notre dossier d'architecture.
+8. Dans le dossier conception, vous trouvez les 3 diagrammes qui composent notre dossier d'architecture.
 
 9. Les services sont testables sur PostMan (localhost:9090)
 
