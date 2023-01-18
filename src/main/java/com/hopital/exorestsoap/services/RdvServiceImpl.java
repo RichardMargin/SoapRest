@@ -19,7 +19,7 @@ public class RdvServiceImpl implements RdvService {
     private RdvRepository rdvRepository;
 
     @Autowired
-    private ConsultationRepository consultationRepository;
+    private ConsultationService consultationService;
 
     @Autowired
     private PatientService patientService;
@@ -46,7 +46,7 @@ public class RdvServiceImpl implements RdvService {
             rdv.setMedecin(medecin.get());
         }
         if (rdv.getId()==null) {
-            Consultation consultation = consultationRepository.save(new Consultation());
+            Consultation consultation = consultationService.save(new Consultation());
             rdv.setConsultation(consultation);
         }
         return rdvRepository.save(rdv);
