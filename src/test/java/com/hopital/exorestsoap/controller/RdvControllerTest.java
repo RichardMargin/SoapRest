@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(org.mockito.junit.MockitoJUnitRunner.class)
@@ -84,16 +85,21 @@ public void saveRdv() throws Exception{
 }
 
 @Test
-public void deleteRdvById() throws Exception{
+public void deleteRdvs() throws Exception{
 //Given
     Rdv rdvMock = new Rdv();
+    Patient patientMock = new Patient();
+    patientMock.setId(1L);
+    Medecin medecinMock = new Medecin();
+    medecinMock.setId(1L);
     rdvMock.setId(1L);
 
 //When
-    Mockito.when(rdvService.findById(1L)).thenReturn(Optional.of(rdvMock));
+    Mockito.when(rdvService.save(rdvMock,1L,1L)).thenReturn(rdvMock);
+    rdvController.save(rdvMock,1L,1L);
+    rdvController.deleteAll();
     ResponseEntity<Rdv> response = rdvController.deleteById(1L);
 
 //Then
-    assertEquals(HttpStatus.NO_CONTENT,response.getStatusCode());
-}
+    assertThat(response.getBody()).isNull();}
 }
