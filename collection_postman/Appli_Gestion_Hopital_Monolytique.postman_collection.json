@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "04df3f34-0ad9-4a0c-a03e-9489e0800b9b",
+		"_postman_id": "08b51045-c81c-4e8d-9b62-f8a70bf6022a",
 		"name": "Appli_Gestion_Hopital_Monolytique",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12,7 +12,20 @@
 					"name": "Récup toutes les consultations",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/consultations/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"consultations",
+								"all"
+							]
+						}
 					},
 					"response": []
 				},
@@ -20,7 +33,20 @@
 					"name": "Récupérer une consultation par id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/consultations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"consultations",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -28,7 +54,29 @@
 					"name": "Modifier une consultation",
 					"request": {
 						"method": "PUT",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"diagnostique\": \"diabète\",\r\n    \"traitement\": \"insuline\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/consultations/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"consultations",
+								"edit"
+							]
+						}
 					},
 					"response": []
 				},
@@ -36,7 +84,21 @@
 					"name": "Supprimer une consultation par id",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/consultations/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"consultations",
+								"delete",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -44,7 +106,21 @@
 					"name": "Supprimer toutes les consultations",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/consultations/delete/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"consultations",
+								"delete",
+								"all"
+							]
+						}
 					},
 					"response": []
 				}
@@ -57,7 +133,20 @@
 					"name": "Récupérer tous les médecins",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/medecins/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"medecins",
+								"all"
+							]
+						}
 					},
 					"response": []
 				},
@@ -65,7 +154,20 @@
 					"name": "Récupérer un médecin par id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/medecins/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"medecins",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -73,7 +175,29 @@
 					"name": "Créer un nouveau médecin",
 					"request": {
 						"method": "POST",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"prenom\":\"Louis\",\r\n    \"nom\": \"Pasteur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/medecins/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"medecins",
+								"new"
+							]
+						}
 					},
 					"response": []
 				},
@@ -81,7 +205,29 @@
 					"name": "Modifier les informations d'un médecin",
 					"request": {
 						"method": "PUT",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"prenom\":\"Louis\",\r\n    \"nom\": \"Pasteur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/medecins/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"medecins",
+								"edit"
+							]
+						}
 					},
 					"response": []
 				},
@@ -89,7 +235,21 @@
 					"name": "Supprimer un médecin de la BDD par id",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/medecins/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"medecins",
+								"delete",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -97,7 +257,21 @@
 					"name": "Supprimer tous les médecins de la BDD",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/medecins/delete/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"medecins",
+								"delete",
+								"all"
+							]
+						}
 					},
 					"response": []
 				}
@@ -110,7 +284,20 @@
 					"name": "Récupérer tous les patients",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/patients/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"patients",
+								"all"
+							]
+						}
 					},
 					"response": []
 				},
@@ -118,7 +305,20 @@
 					"name": "Récupérer un patient par id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/patients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"patients",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -126,7 +326,29 @@
 					"name": "Créer un nouveau patient",
 					"request": {
 						"method": "POST",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"prenom\":\"Maxime\",\r\n    \"nom\": \"Dupont\",\r\n    \"telephone\": \"+330734987943\",\r\n    \"dateDeNaissance\": \"1987-09-23T19:04:02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/patients/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"patients",
+								"new"
+							]
+						}
 					},
 					"response": []
 				},
@@ -134,7 +356,29 @@
 					"name": "Modifier les informations d'un patient",
 					"request": {
 						"method": "PUT",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"prenom\":\"Maximilien\",\r\n    \"nom\": \"Dupont\",\r\n    \"telephone\": \"+330734987943\",\r\n    \"dateDeNaissance\": \"1987-09-23T19:04:02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/patients/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"patients",
+								"edit"
+							]
+						}
 					},
 					"response": []
 				},
@@ -142,7 +386,21 @@
 					"name": "Supprimer un patient de la BDD par id",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/patients/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"patients",
+								"delete",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -150,7 +408,21 @@
 					"name": "Supprimer tous les patients de la BDD",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/patients/delete/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"patients",
+								"delete",
+								"all"
+							]
+						}
 					},
 					"response": []
 				}
@@ -163,7 +435,20 @@
 					"name": "Récupérer tous les rdvs de la BDD",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/rdvs/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"rdvs",
+								"all"
+							]
+						}
 					},
 					"response": []
 				},
@@ -171,7 +456,20 @@
 					"name": "Récupérer un rdv par id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/rdvs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"rdvs",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -179,7 +477,31 @@
 					"name": "Créer un nouveau rdv",
 					"request": {
 						"method": "POST",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\":\"2023-02-03T10:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/rdvs/new/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"rdvs",
+								"new",
+								"1",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -187,7 +509,31 @@
 					"name": "Modifier les informations d'un rdv",
 					"request": {
 						"method": "PUT",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \"id\": 3,\r\n    \"date\":\"2023-02-03T10:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/rdvs/edit/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"rdvs",
+								"edit",
+								"1",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -195,7 +541,21 @@
 					"name": "Supprimer un rdv de la BDD par id",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/rdvs/delete/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"rdvs",
+								"delete",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -203,7 +563,21 @@
 					"name": "Supprimer tous les rdvs de la BDD",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/hopital-api/rdvs/delete/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"hopital-api",
+								"rdvs",
+								"delete",
+								"all"
+							]
+						}
 					},
 					"response": []
 				}
